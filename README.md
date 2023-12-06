@@ -1,6 +1,6 @@
 # MyWeatherApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+This project is a weather application generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
 
 ## Development server
 
@@ -22,6 +22,30 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## RapidAPI Weather API Configuration
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To integrate with the RapidAPI weather API, this Angular application relies on specific configuration settings. Below is an overview of the key configuration parameters stored in the `environment.ts` file.
+
+### Environment Configuration
+
+```typescript```
+// src/environments/environment.ts
+
+export const environment = {
+    production: false,
+    weatherApiBaseUrl: 'https://weatherapi-com.p.rapidapi.com/current.json',
+    XRapidAPIHostHeaderName: 'X-RapidAPI-Host',
+    XRapidAPIHostHeaderValue: 'weatherapi-com.p.rapidapi.com',
+    XRapidAPIKeyHeaderName: 'X-RapidAPI-Key',
+    XRapidAPIKeyHeaderValue: '035b854d26mshce7d8592f07d0c1p10e77fjsn78af0be4bbbe'
+};
+
+### Configuration
+
+
+Before running the application, make sure to configure the API key in the appropriate configuration files. Typically, this involves updating a configuration file with your RapidAPI key.
+
+// src/app/config/api.config.json
+{
+  "rapidApiKey": "your_rapidapi_key_here"
+}
